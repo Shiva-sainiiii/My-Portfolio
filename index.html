@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
 
+  <!-- SEO Meta -->
+  <meta name="description" content="Portfolio of Shiva Saini - Developer & Digital Creator">
+
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+
 </head>
 <body>
   <!-- Header -->
@@ -37,11 +41,10 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Hi, I'm <span>Shiva Saini 👋</span></h1>
-      <p>
-        A passionate Digital Creator & Developer, crafting modern and 
-        impactful digital experiences.
-      </p>
+      <h1>
+        <span class="hi"></span><span class="name"></span>
+      </h1>
+      <p>A passionate Digital Creator & Developer, crafting modern and impactful digital experiences.</p>
       <div class="buttons">
         <a href="#projects" class="btn btn-primary">View Projects</a>
         <button class="btn btn-outline">Download CV</button>
@@ -50,48 +53,21 @@
 
     <!-- Highlights Section -->
     <section class="highlights" id="highlights">
-      <div class="card">
-        <span>💻</span>
-        <p>Frontend Development</p>
-      </div>
-      <div class="card">
-        <span>📂</span>
-        <p>10+ Projects Completed</p>
-      </div>
-      <div class="card">
-        <span>🏆</span>
-        <p>6+ Months of Experience</p>
-      </div>
+      <div class="card"><span>💻</span><p>Frontend Development</p></div>
+      <div class="card"><span>📂</span><p>10+ Projects Completed</p></div>
+      <div class="card"><span>🏆</span><p>6+ Months of Experience</p></div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
       <h2>My Projects</h2>
       <div class="project-list">
-        <div class="project-card">
-          <img src="tictactoe.jpg" alt="Project 1 Screenshot">
-          <h3>Tic-Tac-Toe</h3>
-        </div>
-        <div class="project-card">
-          <img src="snakeladder.jpg" alt="Project 2 Screenshot">
-          <h3>Snake & Ladder</h3>
-        </div>
-        <div class="project-card">
-          <img src="octanet.jpg" alt="Project 3 Screenshot">
-          <h3>OctaNet LandingPage</h3>
-        </div>
-        <div class="project-card">
-          <img src="cuberto.jpg" alt="Project 4 Screenshot">
-          <h3>Cuberto Clone</h3>
-        </div>
-        <div class="project-card">
-          <img src="Calculator.jpg" alt="Project 5 Screenshot">
-          <h3>Calculator</h3>
-        </div>
-        <div class="project-card">
-          <img src="restaurant.jpg" alt="Project 6 Screenshot">
-          <h3>Restaurant Menu</h3>
-        </div>
+        <div class="project-card"><img src="tictactoe.jpg" alt="Tic Tac Toe"><h3>Tic-Tac-Toe</h3></div>
+        <div class="project-card"><img src="snakeladder.jpg" alt="Snake & Ladder"><h3>Snake & Ladder</h3></div>
+        <div class="project-card"><img src="octanet.jpg" alt="OctaNet"><h3>OctaNet LandingPage</h3></div>
+        <div class="project-card"><img src="cuberto.jpg" alt="Cuberto"><h3>Cuberto Clone</h3></div>
+        <div class="project-card"><img src="Calculator.jpg" alt="Calculator"><h3>Calculator</h3></div>
+        <div class="project-card"><img src="restaurant.jpg" alt="Restaurant"><h3>Restaurant Menu</h3></div>
       </div>
     </section>
 
@@ -117,26 +93,10 @@
     <section class="offerletters" id="offerletters">
       <h2>Offer Letters From</h2>
       <div class="offer-gallery">
-        <div class="offer-card">
-          <img src="paytm.png" alt="Paytm">
-          <p>Paytm</p>
-          <a href="paytm-offer.pdf" target="_blank">View Offer</a>
-        </div>
-        <div class="offer-card">
-          <img src="paisabazar.png" alt="Paisabazar">
-          <p>Paisabazar</p>
-          <a href="paisabazar-offer.pdf" target="_blank">View Offer</a>
-        </div>
-        <div class="offer-card">
-          <img src="citymall.png" alt="CityMall">
-          <p>CityMall</p>
-          <a href="citymall.pdf" target="_blank">View Offer</a>
-        </div>
-        <div class="offer-card">
-          <img src="wishfin.png" alt="Wishfin">
-          <p>Wishfin</p>
-          <a href="wishfin-offer.pdf" target="_blank">View Offer</a>
-        </div>
+        <div class="offer-card"><img src="paytm.png" alt="Paytm"><p>Paytm</p><a href="paytm-offer.pdf" target="_blank">View Offer</a></div>
+        <div class="offer-card"><img src="paisabazar.png" alt="Paisabazar"><p>Paisabazar</p><a href="paisabazar-offer.pdf" target="_blank">View Offer</a></div>
+        <div class="offer-card"><img src="citymall.png" alt="CityMall"><p>CityMall</p><a href="citymall.pdf" target="_blank">View Offer</a></div>
+        <div class="offer-card"><img src="wishfin.png" alt="Wishfin"><p>Wishfin</p><a href="wishfin-offer.pdf" target="_blank">View Offer</a></div>
       </div>
     </section>
 
@@ -147,7 +107,8 @@
 
       <form class="feedback-form">
         <input type="text" name="name" placeholder="Your Name" required>
-        <textarea name="message" rows="4" placeholder="Your Feedback" required></textarea>
+        <textarea name="message" rows="4" placeholder="Your Feedback" maxlength="200" required></textarea>
+        <p id="char-count">0 / 200</p>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
@@ -159,58 +120,12 @@
 
     <!-- Social Links Section -->
     <section class="social-section">
-      <div class="social-row">
-        <div class="text">
-          <h2>Instagram</h2>
-          <p>@shiva_sainiiii</p>
-        </div>
-        <i class="fab fa-instagram"></i>
-      </div>
-      <hr>
-
-      <div class="social-row">
-        <div class="text">
-          <h2>LinkedIn</h2>
-          <p>@shiva-sainiiii</p>
-        </div>
-        <i class="fab fa-linkedin"></i>
-      </div>
-      <hr>
-
-      <div class="social-row">
-        <div class="text">
-          <h2>GitHub</h2>
-          <p>@shiva-sainiiii</p>
-        </div>
-        <i class="fab fa-github"></i>
-      </div>
-      <hr>
-
-      <div class="social-row">
-        <div class="text">
-          <h2>Behance</h2>
-          <p>@shiva_sainiiii</p>
-        </div>
-        <i class="fab fa-behance"></i>
-      </div>
-      <hr>
-
-      <div class="social-row">
-        <div class="text">
-          <h2>CodePen</h2>
-          <p>@shivasaini</p>
-        </div>
-        <i class="fab fa-codepen"></i>
-      </div>
-      <hr>
-
-      <div class="social-row">
-        <div class="text">
-          <h2>G-mail</h2>
-          <p>shivasaini.5666@gmail.com</p>
-        </div>
-        <i class="fas fa-envelope"></i>
-      </div>
+      <div class="social-row"><div class="text"><h2>Instagram</h2><p>@shiva_sainiiii</p></div><i class="fab fa-instagram"></i></div><hr>
+      <div class="social-row"><div class="text"><h2>LinkedIn</h2><p>@shiva-sainiiii</p></div><i class="fab fa-linkedin"></i></div><hr>
+      <div class="social-row"><div class="text"><h2>GitHub</h2><p>@shiva-sainiiii</p></div><i class="fab fa-github"></i></div><hr>
+      <div class="social-row"><div class="text"><h2>Behance</h2><p>@shiva_sainiiii</p></div><i class="fab fa-behance"></i></div><hr>
+      <div class="social-row"><div class="text"><h2>CodePen</h2><p>@shivasaini</p></div><i class="fab fa-codepen"></i></div><hr>
+      <div class="social-row"><div class="text"><h2>G-mail</h2><p>shivasaini.5666@gmail.com</p></div><i class="fas fa-envelope"></i></div>
     </section>
   </main>
 
@@ -219,10 +134,14 @@
     <p>© 2025 Shiva Saini. All rights reserved.</p>
   </footer>
 
-  <!-- GSAP Core -->
+  <!-- GSAP Core + Text Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <!-- GSAP ScrollTrigger Plugin -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+
+
+
+  <!-- Firebase Integration -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>

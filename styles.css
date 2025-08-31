@@ -67,10 +67,16 @@ main {
    font-weight: bold;
  }
 
- .hero h1 span {
+ /*.hero h1 span {
    color: #b366ff;
  }
-
+*/
+.hi {
+    color: white; /* White text */
+  }
+  .name {
+    color: #b366ff; /* Purple text */
+  }
  .hero p {
    font-size: 1rem;
    margin: 15px 0 30px;
@@ -396,6 +402,23 @@ height:auto;
   color: cyan;
 }
 
+/* Hover / Touch effect */
+.social-row {
+
+  transition: all 0.3s ease;
+}
+
+.social-row:hover,
+.social-row:active {
+  background-color: rgba(179, 102, 255, 0.1); /* Light purple transparent */
+  backdrop-filter: blur(5px); /* Glass effect */
+}
+
+.social-row:hover i,
+.social-row:active i {
+  color: #b366ff; /* Bright purple icon */
+}
+
 .certificates {
   margin: 80px auto;
   max-width: 1000px;
@@ -590,10 +613,9 @@ section:last-of-type {
   margin-bottom: 10px;
   font-size: 0.95rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
-  display: flex;                  /* <-- new */
-  justify-content: space-between; /* text left, button right */
-  align-items: center;            /* vertically center */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .delete-btn {

@@ -1,93 +1,150 @@
-// CV Download
-document.querySelector('.btn-outline').addEventListener('click', () => {
-  const link = document.createElement('a');
-  link.href = 'my_cv.pdf';
-  link.download = 'Shiva_Saini_CV.pdf';
-  link.click();
-});
+// ==================== CV Download ====================
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector('.btn-outline').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = 'my_cv.pdf';  
+    link.download = 'Shiva_Saini_CV.pdf';
+    link.click();
+  });
 
-// Hamburger Menu
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu-overlay');
-let menuOpen = false;
+  // ==================== Hamburger Menu ====================
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu-overlay');
+  let menuOpen = false;
 
-hamburger.addEventListener('click', () => {
-  if (!menuOpen) {
-    gsap.to(menu, {
-      clipPath: 'circle(150% at top right)',
-      duration: 0.6,
-      ease: "power2.out"
+  hamburger.addEventListener('click', () => {
+    if (!menuOpen) {
+      gsap.to(menu, {
+        clipPath: 'circle(150% at top right)',
+        duration: 0.6,
+        ease: "power2.out"
+      });
+      document.body.style.overflow = 'hidden';
+      menuOpen = true;
+    } else {
+      gsap.to(menu, {
+        clipPath: 'circle(0% at top right)',
+        duration: 0.6,
+        ease: "power2.in"
+      });
+      document.body.style.overflow = '';
+      menuOpen = false;
+    }
+  });
+
+  // Close menu when link clicked
+  document.querySelectorAll('.menu-overlay a').forEach(link => {
+    link.addEventListener('click', () => {
+      gsap.to(menu, { 
+        clipPath: 'circle(0% at top right)', 
+        duration: 0.6, 
+        ease: "power2.in" 
+      });
+      document.body.style.overflow = '';
+      menuOpen = false;
     });
-    document.body.style.overflow = 'hidden';
-    menuOpen = true;
-  } else {
-    gsap.to(menu, {
-      clipPath: 'circle(0% at top right)',
-      duration: 0.6,
-      ease: "power2.in"
-    });
-    document.body.style.overflow = '';
-    menuOpen = false;
-  }
-});
-
-// Close menu when link clicked
-document.querySelectorAll('.menu-overlay a').forEach(link => {
-  link.addEventListener('click', () => {
-    gsap.to(menu, { clipPath: 'circle(0% at top right)', duration: 0.6, ease: "power2.in" });
-    document.body.style.overflow = '';
-    menuOpen = false;
   });
 });
 
-// Feedback Form Handling with LocalStorage
+
+// ==================== Firebase Feedback ====================
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc, serverTimestamp } 
+  from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+// Firebase Config
+const firebaseConfig = {
+  apiKey: "AIzaSyASTJgKYVhI_tkYxCQxCO7K4vIymwTh9mA",
+  authDomain: "feedback-form-d2682.firebaseapp.com",
+  projectId: "feedback-form-d2682",
+  storageBucket: "feedback-form-d2682.firebasestorage.app",
+  messagingSenderId: "542315428719",
+  appId: "1:542315428719:web:7018a1621d4f2a6f4c869a",
+};
+
+// Init Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Form & List
 const feedbackForm = document.querySelector('.feedback-form');
 const feedbackList = document.getElementById('feedback-list');
+const messageInput = feedbackForm.message;
+const charCount = document.getElementById("char-count");
 
-let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+// Character counter
+messageInput.addEventListener("input", () => {
+  charCount.textContent = `${messageInput.value.length} / 200`;
+});
 
-// Load old feedbacks
-feedbacks.forEach(f => addFeedback(f.name, f.message, false));
-
-feedbackForm.addEventListener("submit", (e) => {
+// Submit feedback → Firestore
+feedbackForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-
   const name = feedbackForm.name.value.trim();
   const message = feedbackForm.message.value.trim();
 
   if (name && message) {
-    addFeedback(name, message, true); // save new one
+    await addDoc(collection(db, "feedbacks"), {
+      name,
+      message,
+      timestamp: serverTimestamp()
+    });
     feedbackForm.reset();
+    charCount.textContent = "0 / 200";
   }
 });
 
-// Single function with delete button
-function addFeedback(name, msg, save = false) {
+// Real-time listener
+const q = query(collection(db, "feedbacks"), orderBy("timestamp", "desc"));
+onSnapshot(q, (snapshot) => {
+  feedbackList.innerHTML = "";
+  snapshot.forEach((docSnap) => {
+    const data = docSnap.data();
+    addFeedback(data.name, data.message, docSnap.id);
+  });
+});
+
+// Add feedback to UI
+function addFeedback(name, msg, id) {
   const li = document.createElement("li");
 
-  // text span
   const textSpan = document.createElement("span");
   textSpan.textContent = `${name}: ${msg}`;
   li.appendChild(textSpan);
 
-  // ❌ delete button
   const delBtn = document.createElement("button");
   delBtn.textContent = "×";
-  delBtn.classList.add("delete-btn"); // css se style karenge
+  delBtn.classList.add("delete-btn");
 
-  delBtn.addEventListener("click", () => {
-    li.remove();
-    feedbacks = feedbacks.filter(f => !(f.name === name && f.message === msg));
-    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+  delBtn.addEventListener("click", async () => {
+    await deleteDoc(doc(db, "feedbacks", id));
   });
 
   li.appendChild(delBtn);
   feedbackList.appendChild(li);
-
-  if (save) {
-    feedbacks.push({ name, message: msg });
-    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-  }
 }
 
+// Gsap 
 
+gsap.registerPlugin(TextPlugin);
+
+// Clear text first
+document.querySelector(".hi").textContent = "";
+document.querySelector(".name").textContent = "";
+
+// Step 1: "Hi, I'm " type white me
+gsap.to(".hi", {
+  duration: 1,
+  text: "Hi, I'm ",
+  ease: "none",
+  delay: 0.1
+
+});
+
+// Step 2: "Shiva Saini 👋" type purple me
+gsap.to(".name", {
+  duration: 1.5,
+  text: "Shiva Saini 👋",
+  ease: "none",
+  delay: 1.5
+});
