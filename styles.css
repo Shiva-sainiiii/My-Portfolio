@@ -314,14 +314,15 @@ text-transform:uppercase;
   width: 100vw;
   height: 100vh;
   background: rgba(30, 10, 50, 0.95);
-  clip-path: circle(0% at top right); /* menu expands from hamburger */
+  clip-path: circle(0% at top right); 
   z-index: 999;
   display: flex;
   justify-content: flex-start; /* align menu items to left */
   align-items: center;
   transition: clip-path 0.6s ease-in-out;
   padding-left: 50px; /* space from left edge */
-}
+  will-change: clip-path; /* smoother performance */}
+
 
 .menu-overlay ul {
   list-style: none;
@@ -343,36 +344,57 @@ text-transform:uppercase;
   color: #a64dff;
 }
 
-.socials {
-  margin: 80px auto;
-  text-align: center;
-  color: #fff;
-  max-width: 600px;
-  padding: 30px 20px;
+
+/* Social Section Styling */
+.social-section {
+width:100vw;
+height:auto;
+ padding: 20px;
+ border-radius: 8px;
+  margin: 20px 0;
 }
 
-.socials h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.social-links {
+.social-row {
   display: flex;
-  justify-content: center;
-  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  color: white;
+
 }
 
-.social-links a {
-  font-size: 2rem;
-  color: #a64dff;
-  transition: 0.3s ease;
+/* Text container alignment fix */
+.social-row .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* sab text ek hi left line se start hoga */
+  margin: 0;
+  padding: 0;
 }
 
-.social-links a:hover {
-  color: #fff;
-  transform: scale(1.2);
+.social-row .text h2,
+.social-row .text p {
+  margin: 0;   /* default margin remove */
+  padding: 0;  /* default padding remove */
 }
 
+.social-row .text h2 {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.social-row .text p {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 3px;
+
+}
+
+.social-row i {
+  font-size: 28px;
+  color: cyan;
+}
 
 .certificates {
   margin: 80px auto;
@@ -416,10 +438,16 @@ text-transform:uppercase;
   margin: 80px auto;
   max-width: 1000px;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
   color: #fff;
 }
-
+.offer-card img {
+  max-width: 100px;   /* image ki max width */
+  max-height: 60px;   /* image ki max height */
+  object-fit: contain;
+  margin: 0 auto 12px;  /* center horizontally aur neeche space */
+  display: block;      /* center align ensure */
+}
 .offerletters h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -441,12 +469,7 @@ text-transform:uppercase;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.offer-card img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
+
 
 .offer-card p {
   font-size: 1.1rem;
@@ -476,7 +499,7 @@ text-transform:uppercase;
 
 
 .feedback {
-  margin: 80px auto;
+  margin: auto auto;
   max-width: 700px;
   text-align: center;
   padding: 40px 20px;
@@ -534,4 +557,61 @@ text-transform:uppercase;
   margin-bottom: 10px;
   font-size: 0.95rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.projects,
+.offerletters,
+.certificates,
+.contact,
+.feedback {
+  margin: 0 auto;  /* vertical margin hata diya */
+  max-width: 1000px;
+}
+section {
+  padding: 60px 20px;          /* andar ka spacing */
+
+}
+
+section:last-of-type {
+  border-bottom: none; /* last section ke niche line nahi */
+}
+
+
+.hamburger { display: block; }
+@media (min-width: 768px) {
+  .hamburger { display: none; }
+  .menu-overlay { display: none; } /* optional */
+}
+
+
+#feedback-list li {
+  background: #1c1f2e;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+  display: flex;                  /* <-- new */
+  justify-content: space-between; /* text left, button right */
+  align-items: center;            /* vertically center */
+}
+
+.delete-btn {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
 }

@@ -4,182 +4,225 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css" />
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">Portfolio</div> 
-    <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
-  </nav>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">Portfolio</div>
+      <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+    </nav>
 
-  <!-- Mobile menu overlay -->
-  <div class="menu-overlay">
-    <ul>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#highlights">Highlights</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
-  
-
-<main>
-<section class="hero">
-  <h1>Hi, I'm <span>Shiva Saini 👋</span></h1>
-  <p>
-    A passionate Digital Creator & Developer, crafting modern and 
-    impactful digital experiences.
-  </p>
-<div class="buttons">
-  <a href="#projects" class="btn btn-primary">View Projects</a>
-  <button class="btn btn-outline">Download CV</button>
-</div>
-</section>
-
-<section class="highlights">
-  <div class="card">
-    <span>💻</span>
-    <p>Frontend Development</p>
-  </div>
-  <div class="card">
-    <span>📂</span>
-    <p>10+ Projects Completed</p>
-  </div>
-  <div class="card">
-    <span>🏆</span>
-    <p>6+ Months of Experience</p>
-  </div>
-</section>
-
-<section class="projects" id="projects">
-  <h2>My Projects</h2>
-  <div class="project-list">
-    
-    <div class="project-card">
-      <img src="tictactoe.jpg" alt="Project 1 Screenshot">
-      <h3>Tic-Tac-Toe</h3>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </header>
 
-    <div class="project-card">
-      <img src="snakeladder.jpg" alt="Project 2 Screenshot">
-      <h3>Snake & Ladder</h3>
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Hi, I'm <span>Shiva Saini 👋</span></h1>
+      <p>
+        A passionate Digital Creator & Developer, crafting modern and 
+        impactful digital experiences.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <button class="btn btn-outline">Download CV</button>
+      </div>
+    </section>
 
+    <!-- Highlights Section -->
+    <section class="highlights" id="highlights">
+      <div class="card">
+        <span>💻</span>
+        <p>Frontend Development</p>
+      </div>
+      <div class="card">
+        <span>📂</span>
+        <p>10+ Projects Completed</p>
+      </div>
+      <div class="card">
+        <span>🏆</span>
+        <p>6+ Months of Experience</p>
+      </div>
+    </section>
 
-    </div>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <h2>My Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <img src="tictactoe.jpg" alt="Project 1 Screenshot">
+          <h3>Tic-Tac-Toe</h3>
+        </div>
+        <div class="project-card">
+          <img src="snakeladder.jpg" alt="Project 2 Screenshot">
+          <h3>Snake & Ladder</h3>
+        </div>
+        <div class="project-card">
+          <img src="octanet.jpg" alt="Project 3 Screenshot">
+          <h3>OctaNet LandingPage</h3>
+        </div>
+        <div class="project-card">
+          <img src="cuberto.jpg" alt="Project 4 Screenshot">
+          <h3>Cuberto Clone</h3>
+        </div>
+        <div class="project-card">
+          <img src="Calculator.jpg" alt="Project 5 Screenshot">
+          <h3>Calculator</h3>
+        </div>
+        <div class="project-card">
+          <img src="restaurant.jpg" alt="Project 6 Screenshot">
+          <h3>Restaurant Menu</h3>
+        </div>
+      </div>
+    </section>
 
-    <div class="project-card">
-      <img src="octanet.jpg" alt="Project 3 Screenshot">
-      <h3>OctaNet LandingPage</h3>
-    </div>
-<div class="project-card">
-  <img src="cuberto.jpg" alt="Project 3 Screenshot">
-  <h3>Cuberto Clone</h3>
-</div>
-<div class="project-card">
-  <img src="Calculator.jpg" alt="Project 3 Screenshot">
-  <h3>Calculator</h3>
-</div>
-<div class="project-card">
-  <img src="restaurant.jpg" alt="Project 3 Screenshot">
-  <h3>Restaurant Menu</h3>
-</div>
-  </div>
-</section>
-<section class="contact">
-  <h2>Get in Touch</h2>
-  <p>Let’s build something amazing together 🚀</p>
-  <a href="mailto:shivasaini.5666@gmail.com" class="contact-btn">Say Hello</a>
-</section>
-<section class="certificates" id="certificates">
-  <h2>My Certificates</h2>
-  <div class="certificate-gallery">
-    <div class="certificate-card">
-      <img src="certificate1.jpg" alt="Certificate 1">
-    </div>
-    <div class="certificate-card">
-      <img src="certificate2.jpg" alt="Certificate 2">
-    </div>
-    <div class="certificate-card">
-      <img src="certificate3.jpg" alt="Certificate 3">
-    </div>
-    <div class="certificate-card">
-      <img src="certificate4.jpg" alt="Certificate 3">
-    </div>
-    
-  </div>
-</section>
-<section class="offerletters" id="offerletters">
-  <h2>Offer Letters From</h2>
-  <div class="offer-gallery">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Get in Touch</h2>
+      <p>Let’s build something amazing together 🚀</p>
+      <a href="mailto:shivasaini.5666@gmail.com" class="contact-btn">Say Hello</a>
+    </section>
 
-    <div class="offer-card">
-      <img src="paytm.png" alt="Paytm">
-      <p>Paytm</p>
-      <a href="paytm-offer.pdf" target="_blank">View Offer</a>
-    </div>
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+      <h2>My Certificates</h2>
+      <div class="certificate-gallery">
+        <div class="certificate-card"><img src="certificate1.jpg" alt="Certificate 1"></div>
+        <div class="certificate-card"><img src="certificate2.jpg" alt="Certificate 2"></div>
+        <div class="certificate-card"><img src="certificate3.jpg" alt="Certificate 3"></div>
+        <div class="certificate-card"><img src="certificate4.jpg" alt="Certificate 4"></div>
+      </div>
+    </section>
 
-    <div class="offer-card">
-      <img src="paisabazar.png" alt="Paisabazar">
-      <p>Paisabazar</p>
-      <a href="paisabazar-offer.pdf" target="_blank">View Offer</a>
-    </div>
+    <!-- Offer Letters Section -->
+    <section class="offerletters" id="offerletters">
+      <h2>Offer Letters From</h2>
+      <div class="offer-gallery">
+        <div class="offer-card">
+          <img src="paytm.png" alt="Paytm">
+          <p>Paytm</p>
+          <a href="paytm-offer.pdf" target="_blank">View Offer</a>
+        </div>
+        <div class="offer-card">
+          <img src="paisabazar.png" alt="Paisabazar">
+          <p>Paisabazar</p>
+          <a href="paisabazar-offer.pdf" target="_blank">View Offer</a>
+        </div>
+        <div class="offer-card">
+          <img src="citymall.png" alt="CityMall">
+          <p>CityMall</p>
+          <a href="citymall.pdf" target="_blank">View Offer</a>
+        </div>
+        <div class="offer-card">
+          <img src="wishfin.png" alt="Wishfin">
+          <p>Wishfin</p>
+          <a href="wishfin-offer.pdf" target="_blank">View Offer</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="offer-card">
-      <img src="citymall.png" alt="CityMall">
-      <p>CityMall</p>
-      <a href="citymall.pdf" target="_blank">View Offer</a>
-    </div>
+    <!-- Feedback Section -->
+    <section class="feedback" id="feedback">
+      <h2>Leave a Feedback</h2>
+      <p>I’d love to hear your thoughts! 💬</p>
 
-    <div class="offer-card">
-      <img src="wishfin.png" alt="Wishfin">
-      <p>Wishfin</p>
-      <a href="wishfin-offer.pdf" target="_blank">View Offer</a>
-    </div>
+      <form class="feedback-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="message" rows="4" placeholder="Your Feedback" required></textarea>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 
-  </div>
-</section>
-<section class="feedback" id="feedback">
-  <h2>Leave a Feedback</h2>
-  <p>I’d love to hear your thoughts! 💬</p>
-  
-  <form class="feedback-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <textarea name="message" rows="4" placeholder="Your Feedback" required></textarea>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+      <div class="feedback-display">
+        <h3>What others say:</h3>
+        <ul id="feedback-list"></ul>
+      </div>
+    </section>
 
-  <div class="feedback-display">
-    <h3>What others say:</h3>
-    <ul id="feedback-list"></ul>
-  </div>
-</section>
+    <!-- Social Links Section -->
+    <section class="social-section">
+      <div class="social-row">
+        <div class="text">
+          <h2>Instagram</h2>
+          <p>@shiva_sainiiii</p>
+        </div>
+        <i class="fab fa-instagram"></i>
+      </div>
+      <hr>
 
-<section class="socials">
-  <h2>Connect with Me</h2>
-  <div class="social-links">
-    <a href="https://github.com/shiva-sainiiii" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://twitter.com/your-handle" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-    <a href="https://instagram.com/your-handle" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-</section>
+      <div class="social-row">
+        <div class="text">
+          <h2>LinkedIn</h2>
+          <p>@shiva-sainiiii</p>
+        </div>
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <hr>
 
+      <div class="social-row">
+        <div class="text">
+          <h2>GitHub</h2>
+          <p>@shiva-sainiiii</p>
+        </div>
+        <i class="fab fa-github"></i>
+      </div>
+      <hr>
+
+      <div class="social-row">
+        <div class="text">
+          <h2>Behance</h2>
+          <p>@shiva_sainiiii</p>
+        </div>
+        <i class="fab fa-behance"></i>
+      </div>
+      <hr>
+
+      <div class="social-row">
+        <div class="text">
+          <h2>CodePen</h2>
+          <p>@shivasaini</p>
+        </div>
+        <i class="fab fa-codepen"></i>
+      </div>
+      <hr>
+
+      <div class="social-row">
+        <div class="text">
+          <h2>G-mail</h2>
+          <p>shivasaini.5666@gmail.com</p>
+        </div>
+        <i class="fas fa-envelope"></i>
+      </div>
+    </section>
   </main>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Shiva Saini. All rights reserved.</p>
-</footer>
-<!-- GSAP Core -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Shiva Saini. All rights reserved.</p>
+  </footer>
 
-<!-- GSAP ScrollTrigger Plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js"></script>
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
