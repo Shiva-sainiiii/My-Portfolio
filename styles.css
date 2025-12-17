@@ -637,3 +637,51 @@ section:last-of-type {
 .delete-btn:hover {
   background: #cc0000;
 }
+
+
+/* ===== Desktop Layout Fix ===== */
+@media (min-width: 1024px) {
+
+  /* Projects: 3 x 3 grid */
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* Offer Letters: 2 x 2 grid */
+  .offer-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .offer-card {
+    padding: 30px;
+  }
+}0
+
+@media (min-width: 1024px) {
+
+  .certificate-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+
+@media (min-width: 1200px) {
+  section {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
