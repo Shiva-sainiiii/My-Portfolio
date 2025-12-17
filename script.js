@@ -148,3 +148,25 @@ gsap.to(".name", {
   ease: "none",
   delay: 1.5
 });
+
+
+// ===== PDF Preview Modal =====
+const modal = document.getElementById("pdfModal");
+const pdfFrame = document.getElementById("pdfFrame");
+const closeBtn = document.querySelector(".close-pdf");
+
+document.querySelectorAll(".offer-card a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // new tab stop
+    const pdfUrl = link.getAttribute("href");
+    pdfFrame.src = pdfUrl;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  pdfFrame.src = "";
+  document.body.style.overflow = "";
+});
